@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONOCHROME - Contact Us</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-section {
+      padding: 4rem 0;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-method {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-method h4 {
+      margin: 0;
+      font-size: 1.125rem;
+    }
+
+    .contact-method p {
+      margin: 0;
+      color: var(--muted-foreground);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-size: 0.875rem;
+    }
+
+    .form-control {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.875rem;
+      width: 100%;
+    }
+
+    .form-control:focus {
+      outline: 2px solid var(--foreground);
+      outline-offset: 2px;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      margin-top: 1rem;
+    }
+
+    .map-container {
+      aspect-ratio: 16/9;
+      background-color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-foreground);
+      border-radius: var(--radius);
+      margin-top: 4rem;
+    }
+
+    .faq {
+      padding: 4rem 0;
+      background-color: var(--muted);
+    }
+
+    .faq-list {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 0.5rem 0;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: '-';
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0.5rem 0;
+      color: var(--muted-foreground);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .success-message {
+      display: none;
+      background-color: var(--secondary);
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .contact-content {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">MONOCHROME</h1>
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <button class="mobile-menu-button">Menu</button>
+      <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Get in touch with our team. We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div id="successMessage" class="success-message">
+        Thank you for your message! We'll get back to you soon.
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-method">
+            <h4>Email</h4>
+            <p>hello@monochrome.com</p>
+          </div>
+          
+          <div class="contact-method">
+            <h4>Phone</h4>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          
+          <div class="contact-method">
+            <h4>Address</h4>
+            <p>123 Design Street<br>Creative District<br>New York, NY 10001</p>
+          </div>
+          
+          <div class="contact-method">
+            <h4>Hours</h4>
+            <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</p>
+          </div>
+        </div>
+        
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+          </div>
+          
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="map-container">
+        <div class="placeholder">Map Location</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h3 class="text-center">Frequently Asked Questions</h3>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">What is your design process?</div>
+          <div class="faq-answer">
+            Our design process begins with understanding your needs and objectives. We then research, brainstorm, and create initial concepts. After gathering feedback, we refine the designs until we achieve the perfect balance of form and function.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Do you offer custom design services?</div>
+          <div class="faq-answer">
+            Yes, we offer fully customized design services tailored to your specific needs. Whether you need branding, product design, or interior concepts, we can help bring your vision to life.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How long does a typical project take?</div>
+          <div class="faq-answer">
+            Project timelines vary depending on scope and complexity. A small project might take 2-3 weeks, while larger projects can take several months. We'll provide a detailed timeline during our initial consultation.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What are your payment terms?</div>
+          <div class="faq-answer">
+            We typically require a 50% deposit to begin work, with the remaining balance due upon project completion. For larger projects, we may establish milestone payments. We accept major credit cards, bank transfers, and PayPal.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>MONOCHROME</h4>
+          <p>Embracing simplicity through black and white design.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© <span id="year"></span> Monochrome. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // FAQ toggle functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+      });
+    });
+    
+    // Form submission handling
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // In a real application, you would send the form data to a server here
+      // For this demo, we'll just show the success message
+      successMessage.style.display = 'block';
+      contactForm.reset();
+      
+      // Hide the success message after 5 seconds
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

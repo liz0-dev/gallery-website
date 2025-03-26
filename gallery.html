@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONOCHROME - Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-image {
+      aspect-ratio: 16/9;
+      background-color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-foreground);
+    }
+
+    .gallery-caption {
+      padding: 1rem;
+      background-color: var(--background);
+    }
+
+    .gallery-caption h4 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .gallery-caption p {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+      background-color: var(--secondary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    @media (min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">MONOCHROME</h1>
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-button">Menu</button>
+      <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <div class="container">
+      <h2>Our Gallery</h2>
+      <p>Explore our collection of monochromatic designs and inspirations.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <div class="container">
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="minimalist">Minimalist</button>
+        <button class="filter-btn" data-filter="abstract">Abstract</button>
+        <button class="filter-btn" data-filter="modern">Modern</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="minimalist">
+          <div class="gallery-image">
+            <div class="placeholder">Gallery Image 1</div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Minimalist Composition</h4>
+            <p>A study in simplicity and negative space.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="abstract">
+          <div class="gallery-image">
+            <div class="placeholder">Gallery Image 2</div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Abstract Patterns</h4>
+            <p>Exploring geometric forms in black and white.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="modern">
+          <div class="gallery-image">
+            <div class="placeholder">Gallery Image 3</div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Modern Architecture</h4>
+            <p>Clean lines and bold contrasts in urban spaces.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="minimalist">
+          <div class="gallery-image">
+            <div class="placeholder">Gallery Image 4</div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Light and Shadow</h4>
+            <p>The interplay of illumination and darkness.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="abstract">
+          <div class="gallery-image">
+            <div class="placeholder">Gallery Image 5</div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Textural Contrasts</h4>
+            <p>Exploring surface qualities in monochrome.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="modern">
+          <div class="gallery-image">
+            <div class="placeholder">Gallery Image 6</div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Urban Minimalism</h4>
+            <p>The beauty of simplicity in city environments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>MONOCHROME</h4>
+          <p>Embracing simplicity through black and white design.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© <span id="year"></span> Monochrome. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Gallery filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

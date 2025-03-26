@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONOCHROME - About Us</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-section {
+      padding: 4rem 0;
+    }
+
+    .about-content {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-image {
+      aspect-ratio: 4/3;
+      background-color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-foreground);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .team {
+      padding: 4rem 0;
+      background-color: var(--muted);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-member {
+      background-color: var(--background);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .member-image {
+      aspect-ratio: 1;
+      background-color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-foreground);
+    }
+
+    .member-details {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .member-details h4 {
+      margin: 0 0 0.25rem 0;
+    }
+
+    .member-details p.role {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .member-details p.bio {
+      font-size: 0.875rem;
+      color: var(--foreground);
+    }
+
+    .values {
+      padding: 4rem 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .value-card {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-card h4 {
+      margin: 1rem 0;
+    }
+
+    .value-icon {
+      width: 4rem;
+      height: 4rem;
+      background-color: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">MONOCHROME</h1>
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-button">Menu</button>
+      <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Learn more about our design philosophy and team.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <div class="placeholder">About Image</div>
+        </div>
+        <div class="about-text">
+          <h3>Our Story</h3>
+          <p>
+            MONOCHROME was founded in 2018 with a single mission: to create designs that focus on what truly matters. In a world filled with noise and distraction, we believe in the power of simplicity and the elegance of black and white.
+          </p>
+          <p>
+            Our journey began when a group of like-minded designers came together, united by their appreciation for minimalist aesthetics and the timeless quality of monochromatic design. What started as a small studio has grown into a community of creators dedicated to exploring the endless possibilities within the constraints of black and white.
+          </p>
+          <p>
+            Today, we continue to push the boundaries of what can be achieved through thoughtful design that strips away the unnecessary to reveal the essential.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="values">
+    <div class="container">
+      <h3 class="text-center">Our Values</h3>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">S</div>
+          <h4>Simplicity</h4>
+          <p>We believe in removing the unnecessary to focus on what truly matters.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">Q</div>
+          <h4>Quality</h4>
+          <p>Every detail matters. We're committed to excellence in everything we create.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">I</div>
+          <h4>Innovation</h4>
+          <p>We continuously explore new ways to express creativity within constraints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team">
+    <div class="container">
+      <h3 class="text-center">Meet Our Team</h3>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-image">
+            <div class="placeholder">Team Member 1</div>
+          </div>
+          <div class="member-details">
+            <h4>Alex Morgan</h4>
+            <p class="role">Creative Director</p>
+            <p class="bio">Alex brings over 15 years of design experience and a passion for minimalist aesthetics.</p>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="member-image">
+            <div class="placeholder">Team Member 2</div>
+          </div>
+          <div class="member-details">
+            <h4>Jordan Lee</h4>
+            <p class="role">Design Lead</p>
+            <p class="bio">Jordan specializes in creating balanced compositions that communicate clearly.</p>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="member-image">
+            <div class="placeholder">Team Member 3</div>
+          </div>
+          <div class="member-details">
+            <h4>Taylor Kim</h4>
+            <p class="role">Product Designer</p>
+            <p class="bio">Taylor focuses on translating our aesthetic into functional, user-friendly products.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>MONOCHROME</h4>
+          <p>Embracing simplicity through black and white design.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© <span id="year"></span> Monochrome. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
